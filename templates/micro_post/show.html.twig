@@ -1,0 +1,7 @@
+{% extends 'base.html.twig' %}
+{% block title %}Single Post!{% endblock %}
+{% block body %}
+<p>{{ post.title }}</p>
+<p>{{ post.text }}</p>
+{% include('micro_post/_post.html.twig') %}
+{% endblock %}

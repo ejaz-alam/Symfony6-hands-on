@@ -1,0 +1,19 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}All Posts!{% endblock %}
+
+{% block body %}
+    <div>
+        {% if posts | length > 0 %}
+        <h3>Hello, We have all these posts here.</h3>
+        {% for  post in posts %}
+            <h2><a href="{{ path('app_micro_post', {post: post.id}) }}">{{ post.title }}</a></h2>
+
+        {% endfor %}
+        {% else %}
+            <p>
+                No Posts!
+            </p>
+        {% endif %}
+    </div>
+{% endblock %}
