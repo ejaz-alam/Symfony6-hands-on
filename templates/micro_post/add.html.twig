@@ -1,5 +1,20 @@
 {% extends 'base.html.twig' %}
 {% block title %}Create New Post!{% endblock %}
 {% block body %}
-    {{ form(form) }}
+    {{ form_start(form) }}
+        {{ form_errors(form) }}
+    <div>
+        {{ form_label(form.title,'Post Title') }}
+    </div>
+    <div>
+        {{ form_widget(form.title, {'attr': {'style': 'color: green'}})}}
+    </div>
+
+    <div>
+        {{ form_label(form.text, 'Post Text') }}
+    </div>
+    <div>
+        {{ form_widget(form.text) }}
+    </div>
+    {{ form_end(form) }}
 {% endblock %}
