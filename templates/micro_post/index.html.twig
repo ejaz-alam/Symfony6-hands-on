@@ -5,10 +5,19 @@
 {% block body %}
     <div>
         {% if posts | length > 0 %}
-        <h3>Hello, We have all these posts here.</h3>
-        {% for  post in posts %}
-            <h2><a href="{{ path('app_micro_post', {post: post.id}) }}">{{ post.title }}</a></h2>
-
+        <div class="grid gap-4 md:gap-2 grid-cols-4 grid-rows-4">
+            <div>
+            {% for  post in posts %}
+                <h2 class="uppercase underline decoration-sky-500 mt-20"><a href="{{ path('app_micro_post', {post: post.id}) }}">{{ post.title }}</a></h2>
+                <h4 class="text-gray-900">{{post.text}}</h4>
+                <div class="contrast-200">{{ post.created | date("M j, Y") }}</div>
+                <div class="text-gray-400">
+                    <a href="#">
+                        Like <span>0</span>
+                    </a>
+                </div>
+            </div>
+        <div>
         {% endfor %}
         {% else %}
             <p>
