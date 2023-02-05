@@ -1,17 +1,13 @@
 {{ form_start(form) }}
         {{ form_errors(form) }}
 <div>
-    {{ form_label(form.title,'Post Title') }}
-</div>
-<div>
-    {{ form_widget(form.title, {'attr': {'style': 'color: green'}})}}
+    {{ form_label(form.title,'Post Title', {'label_attr': {'class': 'block w:full text-gray-600 font-medium '}}) }}
+    {{ form_widget(form.title, {'attr': {'class': 'block w-full shadow-sm border-gray-300 dark:border-transparent dark:text-gray-800 rounded-md border p-2 mt-1 mb-2'}})}}
 </div>
 
 <div>
-    {{ form_label(form.text, 'Post Text') }}
+    {{ form_label(form.text, 'Post Text', {'label_attr': {'class': 'block w:full text-gray-600 font-medium'}}) }}
+    {{ form_widget(form.text, {'attr': {'class': 'block w-full shadow-sm border-gray-300 dark:border-transparent dark:text-gray-800 rounded-md border p-2 mt-1 mb-2'}}) }}
 </div>
-<div>
-    {{ form_widget(form.text) }}
-</div>
-<div><button type="submit" name="submit" class="bg-sky-500/75">Submit</button></div>
+<div><button type="submit" name="submit" class="bg-sky-500/75 block w-full shadow-sm border-transparent bg-indigo-600 hover:bg-indigo-400 text-white rounded-md border p-2 mt-4 mb-2">Submit!</button></div>
 {{ form_end(form) }}
